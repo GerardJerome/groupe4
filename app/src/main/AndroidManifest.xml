@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Groupe4">
         <activity
+            android:name=".LastComputeActivity"
+            android:exported="false" />
+        <activity
             android:name=".CalculActivity"
             android:exported="false" />
         <activity
