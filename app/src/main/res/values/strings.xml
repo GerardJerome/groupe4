@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name" translatable="false">groupe4</string>
+    <string name="bouton_calculer">Calculer</string>
+    <string name="bouton_dernier_calcul">Dernier Calcul</string>
+</resources>
