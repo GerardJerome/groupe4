@@ -5,5 +5,7 @@
     <string name="bouton_precedent">Previous</string>
     <string name="toolbar_calculer">Compute</string>
     <string name="toolbar_vider">Clear</string>
+    <string name="message_valeur_trop_grande"> Value too high</string>
+
 
 </resources>

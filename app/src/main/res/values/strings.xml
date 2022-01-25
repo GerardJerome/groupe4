@@ -5,4 +5,5 @@
     <string name="bouton_precedent">Précédent</string>
     <string name="toolbar_calculer">Calculer</string>
     <string name="toolbar_vider">Vider</string>
+    <string name="message_valeur_trop_grande"> Valeur trop grande</string>
 </resources>
