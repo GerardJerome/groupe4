@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LastComputeActivity">
+    tools:context=".view.LastComputeActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -23,7 +23,7 @@
             android:text="TextView" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/lastCompute_textviewCalcul"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView" />

@@ -1,4 +1,4 @@
-package com.jger.groupe4;
+package com.jger.groupe4.model;
 
 public enum TypeOperationEnum {
     ADD("+"),

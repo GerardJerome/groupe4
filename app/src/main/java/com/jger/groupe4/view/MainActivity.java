@@ -1,11 +1,14 @@
-package com.jger.groupe4;
+package com.jger.groupe4.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
+
+import com.jger.groupe4.R;
+import com.jger.groupe4.view.CalculActivity;
+import com.jger.groupe4.view.LastComputeActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,12 +24,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void ouvreActiviteDernierCalcul() {
-        Intent intent = new Intent(this,LastComputeActivity.class);
+        Intent intent = new Intent(this, LastComputeActivity.class);
         startActivity(intent);
     }
 
     private void ouvreActiviteCalculer() {
-        Intent intent = new Intent(this,CalculActivity.class);
+        Intent intent = new Intent(this, CalculActivity.class);
         startActivity(intent);
     }
 }

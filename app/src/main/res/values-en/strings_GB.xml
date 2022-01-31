@@ -6,6 +6,7 @@
     <string name="toolbar_calculer">Compute</string>
     <string name="toolbar_vider">Clear</string>
     <string name="message_valeur_trop_grande"> Value too high</string>
+    <string name="message_division_par_zero">Warning Divide by 0</string>
 
 
 </resources>

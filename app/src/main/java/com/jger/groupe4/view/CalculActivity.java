@@ -1,4 +1,4 @@
-package com.jger.groupe4;
+package com.jger.groupe4.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,10 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.jger.groupe4.exception.DivisionException;
+import com.jger.groupe4.R;
+import com.jger.groupe4.model.TypeOperationEnum;
 
 public class CalculActivity extends AppCompatActivity {
     private Long premierElement =0L;
@@ -115,28 +119,36 @@ public class CalculActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    private boolean calcul() {
-        Long resultat = 0L;
-        switch (typeOperationEnum){
-            case MULTIPLY:
-                resultat = premierElement * deuxiemeElement;
-                break;
-            case ADD:
-                resultat = premierElement+deuxiemeElement;
-                break;
-            case DIVIDE:
-                resultat = premierElement/deuxiemeElement;
-                break;
-            case SUBSTRACT:
-                resultat=premierElement-deuxiemeElement;
-                break;
+    private boolean calcul()  {
+        try {
+            Long resultat = 0L;
+            switch (typeOperationEnum) {
+                case MULTIPLY:
+                    resultat = premierElement * deuxiemeElement;
+                    break;
+                case ADD:
+                    resultat = premierElement + deuxiemeElement;
+                    break;
+                case DIVIDE:
+                    if(deuxiemeElement == 0){
+                        throw new DivisionException();
+                    }else{
+                        resultat = premierElement / deuxiemeElement;
+                    }
+                    break;
+                case SUBSTRACT:
+                    resultat = premierElement - deuxiemeElement;
+                    break;
+            }
+            ouvreLastComputeActivity(resultat);
+        }catch (DivisionException exception){
+            Toast.makeText(this,getString(R.string.message_division_par_zero),Toast.LENGTH_LONG).show();
         }
-        ouvreLastComputeActivity(resultat);
         return true;
     }
 
     private void ouvreLastComputeActivity(Long resultat) {
-        Intent intent = new Intent(this,LastComputeActivity.class);
+        Intent intent = new Intent(this, LastComputeActivity.class);
         intent.putExtra("premierElement",premierElement);
         intent.putExtra("deuxiemeElement",deuxiemeElement);
         intent.putExtra("operationSymbol",typeOperationEnum.getSymbol());
@@ -146,6 +158,9 @@ public class CalculActivity extends AppCompatActivity {
 
     private boolean videTextViewCalcul() {
         textViewCalcul.setText("");
+        premierElement = 0L;
+        deuxiemeElement = 0L;
+        typeOperationEnum = null;
         return true;
     }
 }
