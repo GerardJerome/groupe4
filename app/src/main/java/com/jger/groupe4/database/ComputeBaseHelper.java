@@ -11,7 +11,13 @@ public class ComputeBaseHelper extends DataBaseHelper {
 
     @Override
     protected String getCreationSql() {
-        return null;
+        return "CREATE TABLE IF NOT EXISTS historique ("+
+                "id" + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                CalculDao.clePremierElement + " INTEGER NOT NULL," +
+                CalculDao.cleDeuxiemeElement + " INTEGER NOT NULL," +
+                CalculDao.cleSymbol + " VARCHAR(255) NOT NULL," +
+                CalculDao.cleResultat + " INTEGER NOT NULL" +
+                ")";
     }
 
     @Override

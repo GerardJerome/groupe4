@@ -11,9 +11,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jger.groupe4.database.CalculDao;
+import com.jger.groupe4.database.ComputeBaseHelper;
 import com.jger.groupe4.exception.DivisionException;
 import com.jger.groupe4.R;
+import com.jger.groupe4.model.Entities.Calcul;
 import com.jger.groupe4.model.TypeOperationEnum;
+import com.jger.groupe4.service.CalculService;
 
 public class CalculActivity extends AppCompatActivity {
     private Long premierElement =0L;
@@ -21,6 +25,7 @@ public class CalculActivity extends AppCompatActivity {
     private TypeOperationEnum typeOperationEnum = null;
     private TextView textViewCalcul;
     private Long BORNE_HAUTE = 9999L;
+    private CalculService calculService;
 
 
     @Override
@@ -28,6 +33,7 @@ public class CalculActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calcul);
         textViewCalcul = findViewById(R.id.textview_calcul);
+        calculService = new CalculService(new CalculDao(new ComputeBaseHelper(this)));
         Button bouton1 = findViewById(R.id.button_1);
         bouton1.setOnClickListener(view -> ajouterNombre(1));
         Button bouton2 = findViewById(R.id.button_2);
@@ -140,6 +146,12 @@ public class CalculActivity extends AppCompatActivity {
                     resultat = premierElement - deuxiemeElement;
                     break;
             }
+            Calcul calcul = new Calcul();
+            calcul.setPremierElement(premierElement);
+            calcul.setDeuxiemeElement(deuxiemeElement);
+            calcul.setSymbol(typeOperationEnum.getSymbol());
+            calcul.setResultat(resultat.intValue());
+            calculService.storeInDb(calcul);
             ouvreLastComputeActivity(resultat);
         }catch (DivisionException exception){
             Toast.makeText(this,getString(R.string.message_division_par_zero),Toast.LENGTH_LONG).show();
