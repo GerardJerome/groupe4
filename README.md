@@ -18,11 +18,11 @@ L'application est un mini jeu de calculs mental , voici son fonctionnement gén�
 L'application doit être disponible dans 2 langues (au moins une lisible)
 Un écran principal  permettant de naviguer dans l'application : 
 
-![]()
+![](/doc/mainMenu.png)
 
 Un écran de jeu où l'on doit trouver comme information , le score , le nombre d'erreur restante :
 
-![]()
+![](/doc/game.png)
 
 Un écran de score ou on retrouve les scores et pseudo des meilleurs joueurs 
 
