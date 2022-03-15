@@ -8,7 +8,7 @@ https://github.com/kazors/groupe4/blob/master/app/src/main/java/com/jger/groupe4
 
 https://github.com/kazors/groupe4/blob/master/app/src/main/java/com/jger/groupe4/model/Entities/BaseEntity.java
 
-## PROJET
+## PROJET A RENDRE POUR LE 25/03/2022
 
 Pour rappel l'objectif de ce projet est d'utiliser l'ensemble des connaissances que nous avons acquises durant le module
 
@@ -42,4 +42,7 @@ Est ce le comportement attendu se réalise bien
 1 note sur la base de données : 
 
 Est ce que les highscore se sauvegarde bien en base 
+
+
+Mon mail : jerome.gerard02@outlook.fr
 
